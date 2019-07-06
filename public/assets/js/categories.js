@@ -25,15 +25,17 @@ $.ajax({
 });
 // 删除分类
 $('#tbodyBox').on('click', '.delete', function() {
-    var id = $(this).attr('data-id');
-    $.ajax({
-        type:'delete',//get或post
-        url:'/categories/' + id,//请求的地址
-        success:function(result){//成功的回调函数
-            // console.log(result);
-            location.reload() ;
-        }
-    })
+    if(confirm('确定要删除吗？')) {
+        var id = $(this).attr('data-id');
+        $.ajax({
+            type:'delete',//get或post
+            url:'/categories/' + id,//请求的地址
+            success:function(result){//成功的回调函数
+                // console.log(result);
+                location.reload() ;
+            }
+        })
+    }
 });
 //修改分类
 //01. 根据id查询分类  把数据展现在左侧表单中

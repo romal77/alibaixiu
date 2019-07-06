@@ -90,15 +90,17 @@ $('#formBox').on('submit', '#modifyForm', function() {
 });
 //删除用户
 $('#tbodyBox').on('click', '.delete', function() {
-    var id = $(this).attr('data-id');
-    $.ajax({
-        type:'delete',//get或post
-        url:'/users/'+id,//请求的地址
-        success:function(result){//成功的回调函数
-            // console.log(result);
-            location.reload() ;
-        }
-    })
+    if(confirm('确定要删除吗？')) {
+        var id = $(this).attr('data-id');
+        $.ajax({
+            type:'delete',//get或post
+            url:'/users/'+id,//请求的地址
+            success:function(result){//成功的回调函数
+                // console.log(result);
+                location.reload() ;
+            }
+        })
+    }
 });
 //批量删除
 //01 全选被选中 底下的所有当行同时被选中
