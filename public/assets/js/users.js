@@ -21,7 +21,7 @@ $('#userForm').on('submit', function() {
     return false;
 });
 // 上传头像
-$('#avatar').on('change', function() {
+$('#formBox').on('change','#avatar', function() {
     // console.log($(this));
     // console.dir($(this));
     // console.log(this);
@@ -47,6 +47,7 @@ $('#avatar').on('change', function() {
         }
     })
 });
+
 //渲染用户列表
 $.ajax({
     type:'get',//get或post

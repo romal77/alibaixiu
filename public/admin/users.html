@@ -1,3 +1,8 @@
+<script src="/login/status"></script>
+<script>
+  if(!isLogin) location.href = 'login.html';
+</script>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -101,7 +106,7 @@
   </div>
 
   <div class="aside">
-    <div class="profile">
+    <div class="profile" style="display: none">
       <img class="avatar" src="../uploads/avatar.jpg">
       <h3 class="name">Coder</h3>
     </div>
@@ -212,6 +217,7 @@
         </div>
       </form>
   </script>
+  <script src="/assets/js/common.js"></script>
   <script src="../assets/js/users.js"></script>
 </body>
 </html>

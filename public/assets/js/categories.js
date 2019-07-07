@@ -1,7 +1,7 @@
 // 添加分类
 $('#addCategories').on('submit', function() {
     var formData = $(this).serialize() ;
-    console.log(formData) ;
+    // console.log(formData) ;
     $.ajax({
         type:'post',//get或post
         url:'/categories',//请求的地址
